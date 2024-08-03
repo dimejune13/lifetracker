@@ -59,18 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
     FloatingActionButtonLocation.endTop,
   ];
 
-  void _addIncome() {
-    setState(() {
-      _income++;
-    });
-  }
-
-  void _addExpense() {
-    setState(() {
-      _expense++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
 
