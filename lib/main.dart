@@ -31,8 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _income = 0;
-  int _expense = 0;
 
   var renderOverlay = true;
   var visible = true;
