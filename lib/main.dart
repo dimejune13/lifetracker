@@ -72,24 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'These are your income and expenses:',
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Card(
-                  child: Text(
-                    'Income: $_income',
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                ),
-                Card(
-                  child: Text(
-                    'Expense: $_expense',
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                ),
-              ],
+              'Welcome to Life Tracker App',
             ),
           ],
         ),
