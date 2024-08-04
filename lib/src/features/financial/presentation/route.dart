@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:lifetracker/src/features/financial/presentation/page.dart';
+
 class FinancialRoute extends StatelessWidget {
   const FinancialRoute({super.key});
 
@@ -10,7 +12,7 @@ class FinancialRoute extends StatelessWidget {
         title: const Text('Financial Page'),
       ),
       body: Center(
-        child: Text(("Coming Soon"))
+        child: FinancialPage(),
       ),
     );
   }
