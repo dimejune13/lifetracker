@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lifetracker/src/features/financial/presentation/route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,9 +52,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Choose what to track:'
               ),
               ElevatedButton(
-                onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text(("Financial Tap")),)
-              ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FinancialRoute())
+                  );
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: const Text(
@@ -63,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ElevatedButton(
                 onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text(("Health Tap")),)
+                  const SnackBar(content: Text(("Health Tracker Coming Soon")),)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
