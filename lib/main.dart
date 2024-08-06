@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:lifetracker/constants.dart';
+import 'package:lifetracker/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Life Tracker',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: kBackgroundColor,
         colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.light,
           seedColor: kPrimaryColor,
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'Life Tracker'),
+      home: HomeScreen(),
     );
   }
 }
