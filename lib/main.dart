@@ -17,13 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
-        colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.light,
-          seedColor: kPrimaryColor,
-        ),
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
+        colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
         useMaterial3: true,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomeScreen(),
     );
