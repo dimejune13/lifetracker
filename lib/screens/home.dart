@@ -62,6 +62,8 @@ class HomeBody extends StatelessWidget {
                       hintStyle: TextStyle(
                         color: Theme.of(context).colorScheme.onPrimaryContainer.withOpacity(0.3)
                       ),
+                      enabledBorder: InputBorder.none,
+                      focusedBorder: InputBorder.none,
                     ),
                   ),
                 )
