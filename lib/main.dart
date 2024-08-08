@@ -18,7 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
-        colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: kPrimaryColor,
+          brightness: Brightness.light,
+          contrastLevel: -1.0,
+        ),
         useMaterial3: true,
       ),
       home: HomeScreen(),
