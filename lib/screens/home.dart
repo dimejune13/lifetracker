@@ -60,7 +60,7 @@ class HomeBody extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: "Search",
                       hintStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.onPrimaryContainer.withOpacity(0.3)
+                        color: Theme.of(context).colorScheme.onPrimaryContainer.withOpacity(0.3),
                       ),
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
