@@ -35,7 +35,31 @@ class HomeBody extends StatelessWidget {
                     bottomLeft: Radius.circular(36),
                     bottomRight: Radius.circular(36),
                   ),
-                )
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(kDefaultPadding),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        "Hi There!",
+                        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          color: kTextFieldColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Spacer(),
+                      CircleAvatar(
+                        backgroundColor: kTextFieldColor,
+                        radius: 25.0,
+                        child: CircleAvatar(
+                          radius: 23.0,
+                          backgroundColor: kTextFieldColor,
+                          backgroundImage: AssetImage("assets/images/user_filled.png"),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               Positioned(
                 bottom: 0.0,
