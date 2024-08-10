@@ -35,7 +35,7 @@ class HeaderWithSearchBox extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Text(
-                    "Hi There!",
+                    ("Lifetracker"),
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: kTextFieldColor,
                       fontWeight: FontWeight.bold,
