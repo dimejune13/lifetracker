@@ -37,7 +37,11 @@ class HomeBody extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(kDefaultPadding),
+                  padding: const EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    bottom: 36 + kDefaultPadding,
+                  ),
                   child: Row(
                     children: <Widget>[
                       Text(
