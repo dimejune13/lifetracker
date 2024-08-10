@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 
 import "package:lifetracker/src/presentation/header_with_search_box_widget.dart";
+import "package:lifetracker/src/presentation/title_with_underline_widget.dart";
 
 class HomeScreen extends StatelessWidget {
 
@@ -25,6 +26,7 @@ class HomeBody extends StatelessWidget {
     return Column(
       children: [
         HeaderWithSearchBox(mediaSize: mediaSize),
+        TitleWithUnderline(title: "Track Your Life"),
       ],
     );
   }
