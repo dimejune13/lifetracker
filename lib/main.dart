@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:lifetracker/constants.dart';
-import 'package:lifetracker/src/presentation/home_screen_widget.dart';
+import 'package:lifetracker/src/presentation/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
