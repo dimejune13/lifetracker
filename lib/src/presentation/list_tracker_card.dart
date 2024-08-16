@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lifetracker/constants.dart';
 
+import 'package:lifetracker/src/presentation/financial_page.dart';
+
 class ListTrackerCard extends StatelessWidget {
   const ListTrackerCard({
     super.key,
@@ -17,8 +19,8 @@ class ListTrackerCard extends StatelessWidget {
       ),
       child: Row(
         children: <Widget>[
-          TrackerCard(icon: Icons.attach_money),
-          TrackerCard(icon: Icons.fitness_center),
+          TrackerCard(icon: Icons.attach_money, page: FinancialPage()),
+          TrackerCard(icon: Icons.fitness_center, page: FinancialPage()),
         ],
       ),
     );
@@ -29,9 +31,11 @@ class TrackerCard extends StatelessWidget {
   const TrackerCard({
     super.key,
     required this.icon,
+    required this.page,
   });
 
   final IconData icon;
+  final Widget page;
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +44,13 @@ class TrackerCard extends StatelessWidget {
       child: InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Clicked on Card")),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => page,
+            ),
           );
+
         },
         child: SizedBox(
           width: 120,
