@@ -43,6 +43,7 @@ class _FinancialFormState extends State<FinancialForm> {
   final _formKey = GlobalKey<FormState>();
 
   String? selectedValue = 'qris';
+  List<String> paymentTransactions = <String>['qris', 'cash', 'debit_card', 'credit_card', 'ewallet', 'bank_transfer'];
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +72,7 @@ class _FinancialFormState extends State<FinancialForm> {
               }
               return null;
             },
-            items: <String>['qris', 'cash', 'debit_card', 'credit_card', 'ewallet', 'bank_transfer']
+            items: paymentTransactions
               .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
