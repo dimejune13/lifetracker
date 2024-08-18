@@ -158,6 +158,31 @@ class _FinancialFormState extends State<FinancialForm> {
               },
               controller: expenseController,
             ),
+            ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {      
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Transaction Submitted'),
+                        content: Text('Payment Transaction: $paymentTransactionValue\nBank: $bankValue\nDescription: ${descriptionController.text}\nIncome: ${incomeController.text}\nExpense: ${expenseController.text}\n'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                  _formKey.currentState!.reset();
+                }
+              },
+              child: Text('Submit'),
+            ),
           ],
         ),
       ),
