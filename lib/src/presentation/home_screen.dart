@@ -8,29 +8,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size mediaSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
       ),
-      body: HomeBody(),
+      body: Column(
+        children: [
+          HeaderWithSearchBox(mediaSize: mediaSize),
+          TitleWithUnderline(title: "Track Your Life"),
+          TrackerCardRoutes(),
+        ],
+      ),
     );
   }
 }
-
-class HomeBody extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    Size mediaSize = MediaQuery.of(context).size;
-
-    return Column(
-      children: [
-        HeaderWithSearchBox(mediaSize: mediaSize),
-        TitleWithUnderline(title: "Track Your Life"),
-        TrackerCardRoutes(),
-      ],
-    );
-  }
-}
-
