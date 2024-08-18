@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:lifetracker/constants.dart';
 
 class FinancialPage extends StatelessWidget {
-  const FinancialPage({Key? key}) : super(key: key);
+  const FinancialPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
