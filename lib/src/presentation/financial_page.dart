@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:lifetracker/src/presentation/financial_form.dart';
 class FinancialPage extends StatelessWidget {
   const FinancialPage({Key? key}) : super(key: key);
 
@@ -8,10 +7,20 @@ class FinancialPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Financial Page'),
+        elevation: 0.0,
+        backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+        titleTextStyle: Theme.of(context).textTheme.headlineMedium?.copyWith(
+          color: Theme.of(context).colorScheme.primaryContainer,
+          fontWeight: FontWeight.bold,
+        ),
+        iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.primaryContainer,
+        ),
       ),
-      body: Center(
-        child: FinancialForm(),
+      body: Column(
+        children: [
+          Text("Financial Form"),
+        ],
       ),
     );
   }
