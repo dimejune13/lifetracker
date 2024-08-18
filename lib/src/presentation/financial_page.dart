@@ -36,7 +36,7 @@ class FinancialForm extends StatefulWidget {
   const FinancialForm({Key? key}) : super(key: key);
 
   @override
-  _FinancialFormState createState() => _FinancialFormState();
+  State<FinancialForm> createState() => _FinancialFormState();
 }
 
 class _FinancialFormState extends State<FinancialForm> {
