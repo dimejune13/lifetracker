@@ -62,102 +62,104 @@ class _FinancialFormState extends State<FinancialForm> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Column(
-        children: <Widget>[
-          Text(
-            'Payment Transaction',
-            style: TextStyle(
-              fontSize: 25.0,
-              fontWeight: FontWeight.bold,
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Text(
+              'Payment Transaction',
+              style: TextStyle(
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          DropdownButtonFormField<String>(
-            value: paymentTransactionValue,
-            hint: Text('Select a payment transaction'),
-            onChanged: (selectedPaymentTransaction) {
-              setState(() {
-                paymentTransactionValue = selectedPaymentTransaction;
-              });
-            },
-            validator: (value) {
-              if (value == null) {
-                return 'Please select a payment transaction';
-              }
-              return null;
-            },
-            items: paymentTransactions
-              .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-          ),
-          DropdownButtonFormField(
-            value: bankValue,
-            hint: Text('Select a bank'),
-            onChanged: (selectedBank) {
-              setState(() {
-                bankValue = selectedBank;
-              });
-            },
-            validator: (value) {
-              if (value == null) {
-                return 'Please select a bank';
-              }
-              return null;
-            },
-            items: banks
-              .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Description',
-              hintText: 'Describe the transaction',
+            DropdownButtonFormField<String>(
+              value: paymentTransactionValue,
+              hint: Text('Select a payment transaction'),
+              onChanged: (selectedPaymentTransaction) {
+                setState(() {
+                  paymentTransactionValue = selectedPaymentTransaction;
+                });
+              },
+              validator: (value) {
+                if (value == null) {
+                  return 'Please select a payment transaction';
+                }
+                return null;
+              },
+              items: paymentTransactions
+                .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
             ),
-            keyboardType: TextInputType.multiline,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter the amount';
-              }
-              return null;
-            },
-            controller: descriptionController,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Income',
-              hintText: 'Enter the income',
+            DropdownButtonFormField(
+              value: bankValue,
+              hint: Text('Select a bank'),
+              onChanged: (selectedBank) {
+                setState(() {
+                  bankValue = selectedBank;
+                });
+              },
+              validator: (value) {
+                if (value == null) {
+                  return 'Please select a bank';
+                }
+                return null;
+              },
+              items: banks
+                .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
             ),
-            keyboardType: TextInputType.number,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter the amount';
-              }
-              return null;
-            },
-            controller: incomeController,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Expense',
-              hintText: 'Enter the expense',
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Description',
+                hintText: 'Describe the transaction',
+              ),
+              keyboardType: TextInputType.multiline,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter the amount';
+                }
+                return null;
+              },
+              controller: descriptionController,
             ),
-            keyboardType: TextInputType.number,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter the amount';
-              }
-              return null;
-            },
-            controller: expenseController,
-          ),
-        ],
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Income',
+                hintText: 'Enter the income',
+              ),
+              keyboardType: TextInputType.number,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter the amount';
+                }
+                return null;
+              },
+              controller: incomeController,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Expense',
+                hintText: 'Enter the expense',
+              ),
+              keyboardType: TextInputType.number,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter the amount';
+                }
+                return null;
+              },
+              controller: expenseController,
+            ),
+          ],
+        ),
       ),
     );
   }
