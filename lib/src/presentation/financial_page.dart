@@ -41,6 +41,16 @@ class FinancialForm extends StatefulWidget {
 
 class _FinancialFormState extends State<FinancialForm> {
   final _formKey = GlobalKey<FormState>();
+  final descriptionController = TextEditingController();
+  final incomeController = TextEditingController();
+  final expenseController = TextEditingController();
+
+  @override dispose() {
+    descriptionController.dispose();
+    incomeController.dispose();
+    expenseController.dispose();
+    super.dispose();
+  }
 
   String? paymentTransactionValue = 'qris';
   String? bankValue = 'mandiri';
@@ -104,6 +114,48 @@ class _FinancialFormState extends State<FinancialForm> {
                   child: Text(value),
                 );
               }).toList(),
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Description',
+              hintText: 'Describe the transaction',
+            ),
+            keyboardType: TextInputType.multiline,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter the amount';
+              }
+              return null;
+            },
+            controller: descriptionController,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Income',
+              hintText: 'Enter the income',
+            ),
+            keyboardType: TextInputType.number,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter the amount';
+              }
+              return null;
+            },
+            controller: incomeController,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Expense',
+              hintText: 'Enter the expense',
+            ),
+            keyboardType: TextInputType.number,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter the amount';
+              }
+              return null;
+            },
+            controller: expenseController,
           ),
         ],
       ),
