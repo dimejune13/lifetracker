@@ -42,8 +42,11 @@ class FinancialForm extends StatefulWidget {
 class _FinancialFormState extends State<FinancialForm> {
   final _formKey = GlobalKey<FormState>();
 
-  String? selectedValue = 'qris';
+  String? paymentTransactionValue = 'qris';
+  String? bankValue = 'mandiri';
+
   List<String> paymentTransactions = <String>['qris', 'cash', 'debit_card', 'credit_card', 'ewallet', 'bank_transfer'];
+  List<String> banks = <String>['mandiri', 'jago', 'superbank', 'bca', 'bri', 'bsi', 'danamon'];
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +62,11 @@ class _FinancialFormState extends State<FinancialForm> {
             ),
           ),
           DropdownButtonFormField<String>(
-            value: selectedValue,
+            value: paymentTransactionValue,
             hint: Text('Select a payment transaction'),
-            onChanged: (newValue) {
+            onChanged: (selectedPaymentTransaction) {
               setState(() {
-                selectedValue = newValue;
+                paymentTransactionValue = selectedPaymentTransaction;
               });
             },
             validator: (value) {
@@ -73,6 +76,28 @@ class _FinancialFormState extends State<FinancialForm> {
               return null;
             },
             items: paymentTransactions
+              .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+          ),
+          DropdownButtonFormField(
+            value: bankValue,
+            hint: Text('Select a bank'),
+            onChanged: (selectedBank) {
+              setState(() {
+                bankValue = selectedBank;
+              });
+            },
+            validator: (value) {
+              if (value == null) {
+                return 'Please select a bank';
+              }
+              return null;
+            },
+            items: banks
               .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
