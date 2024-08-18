@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
 import "package:lifetracker/src/presentation/header_with_search_box.dart";
-import "package:lifetracker/src/presentation/list_tracker_card.dart";
+import "package:lifetracker/src/presentation/tracker_card_routes.dart";
 import "package:lifetracker/src/presentation/title_with_underline.dart";
 
 class HomeScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class HomeBody extends StatelessWidget {
       children: [
         HeaderWithSearchBox(mediaSize: mediaSize),
         TitleWithUnderline(title: "Track Your Life"),
-        ListTrackerCard(),
+        TrackerCardRoutes(),
       ],
     );
   }
