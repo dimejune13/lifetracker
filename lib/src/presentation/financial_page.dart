@@ -66,7 +66,7 @@ class _FinancialFormState extends State<FinancialForm> {
         child: Column(
           children: <Widget>[
             Text(
-              'Payment Transaction',
+              'Track Financial Transaction',
               style: TextStyle(
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold,
