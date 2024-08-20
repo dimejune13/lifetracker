@@ -8,7 +8,7 @@ class TrackerCard extends StatelessWidget {
   });
 
   final IconData icon;
-  final Widget page;
+  final Widget? page;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,20 @@ class TrackerCard extends StatelessWidget {
       child: InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => page,
-            ),
-          );
-
+          if (page != null) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => page!,
+              ),
+            );
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Coming soon!'),
+              ),
+            );
+          }
         },
         child: SizedBox(
           width: 120,

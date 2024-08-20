@@ -21,7 +21,7 @@ class TrackerCardRoutes extends StatelessWidget {
       child: Row(
         children: <Widget>[
           TrackerCard(icon: Icons.attach_money, page: FinancialPage()),
-          TrackerCard(icon: Icons.fitness_center, page: FinancialPage()),
+          TrackerCard(icon: Icons.fitness_center, page: null),
         ],
       ),
     );
